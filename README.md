@@ -28,8 +28,8 @@ https://docs.bitfinex.com/docs/api-access for more details.
 
 Once you are ready, you have to set them as ENV variables
 ```
-export BFX-API-KEY="xxxxxx"
-export BFX-API-SECRET="yyyyyy"
+export BFX_API_KEY="xxxxxx"
+export BFX_API_SECRET="yyyyyy"
 ```
 
 ## Example Usage:

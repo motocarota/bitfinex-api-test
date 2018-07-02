@@ -2,9 +2,9 @@ var { HmacSHA384, enc } = require('crypto-js')
 
 function getConfig () {
   return {
-    apiKey: process.env[ 'BFX-API-KEY' ] || '-',
-    apiSecret: process.env[ 'BFX-API-SECRET' ] || '-',
-    baseURL: process.env[ 'BFX-API-BASE-URL' ] || 'api.bitfinex.com'
+    apiKey: process.env[ 'BFX_API_KEY' ] || '-',
+    apiSecret: process.env[ 'BFX_API_SECRET' ] || '-',
+    baseURL: process.env[ 'BFX_API_BASE_URL' ] || 'api.bitfinex.com'
   }
 }
 
