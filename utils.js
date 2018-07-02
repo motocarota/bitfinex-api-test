@@ -16,7 +16,8 @@ function getApiKeys() {
   }
 }
 
-function getRestURL (version = 2) {
+function getRestURL (args = {}) {
+  const { version = 2 } = args
   const { baseURL } = getConfig()
   
   return `https://${baseURL}/v${version}`
@@ -45,9 +46,11 @@ function toQueryString (json = {}) {
   if (!keys.length) {
     return ''  
   }
-  return '?' + keys.map(
+  const params = keys.map(
     (key) => `${encodeURIComponent(key)}=${encodeURIComponent(json[key])}`
-  ).join('&')
+  )
+
+  return `?${params.join('&')}`
 }
 
 // wss

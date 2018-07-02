@@ -28,21 +28,30 @@ function publicMessage ({ url, params = {} }) {
   )
 }
 
-function authMessage ({ url, body, params }) {
-  const { apiKey = '', apiSecret = '' } = getApiKeys()
-  const baseUrl = getRestURL()
-  const nonce = Date.now().toString() * 1000
+function authMessage (args = {}) {
+  const {
+    url,
+    body = {},
+    params = {}
+  } = args
+  const {
+    apiKey = '',
+    apiSecret = ''
+  } = getApiKeys()
+
+  const baseUrl = getRestURL({ version: 2 })
+  const nonce = JSON.stringify(Date.now().toString() * 1000)
   const rawBody = JSON.stringify(body)
   const queryString = toQueryString(params)
   const signature = crypto
     .createHmac('sha384', apiSecret)
-    .update(`/api/${url}${nonce}${rawBody}`)
+    .update(`/api/${baseUrl}/${url}${nonce}${rawBody}`)
     .digest('hex')
 
-  const completeURL = `${baseUrl}/${url}${queryString}`
+  const completeURL = `${baseUrl}/${url}/${queryString}`
 
   // DEBUG
-  console.log('url:', completeURL)
+  console.log('url:', `/api/${baseUrl}/${url}${nonce}${rawBody}`) // completeURL
   console.log('body:', JSON.stringify(body, 0, 2))
   console.log('nonce:', nonce)
   console.log('signature:', signature)
