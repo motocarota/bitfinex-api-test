@@ -43,15 +43,14 @@ function authMessage (args = {}) {
   const nonce = JSON.stringify(Date.now().toString() * 1000)
   const rawBody = JSON.stringify(body)
   const queryString = toQueryString(params)
-  const signature = crypto
-    .createHmac('sha384', apiSecret)
-    .update(`/api/${baseUrl}/${url}${nonce}${rawBody}`)
-    .digest('hex')
+  const signatureUrl = `/api/v2/${url}/${nonce}${rawBody}`
+  const hmac = crypto.createHmac('sha384', apiSecret).update(signatureUrl)
+  const signature = hmac.digest('hex')
 
   const completeURL = `${baseUrl}/${url}/${queryString}`
 
   // DEBUG
-  console.log('url:', `/api/${baseUrl}/${url}${nonce}${rawBody}`) // completeURL
+  console.log('signature url:', signatureUrl) // completeURL
   console.log('body:', JSON.stringify(body, 0, 2))
   console.log('nonce:', nonce)
   console.log('signature:', signature)
