@@ -2,7 +2,7 @@ const crypto = require('crypto')
 const request = require('request')
 const utils = require ('./utils.js')
 const {
-  getBaseURL,
+  getRestURL,
   getApiKeys,
   toQueryString,
   printResponse
@@ -11,7 +11,7 @@ const {
 // Public Endpoints (GET)
 function publicMessage (args = {}) {
   const { url, params = {} } = args
-  const completeURL = `${getBaseURL()}/${url}`
+  const completeURL = `${getRestURL()}/${url}`
   const queryString = toQueryString(params)
 
   console.log('completeUrl:', completeURL)
