@@ -1,13 +1,9 @@
 const lib = require('../REST-v2.js')
 
-lib.post(
-  'auth/r/margin/tBTCUSD',
-  {},
-  {}
-)
+lib.post({
+  url: 'auth/r/margin/tBTCUSD'
+})
 
-lib.post(
-  'auth/r/margin/base',
-  {},
-  {}
-)
+lib.post({
+  url: 'auth/r/margin/base'
+})

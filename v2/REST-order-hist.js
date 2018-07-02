@@ -1,21 +1,19 @@
 const lib = require('../REST-v2.js')
 
 // hist pair
-lib.post(
-  'v2/auth/r/orders/tBTCUSD/hist',
-  {},
-  {
+lib.post({
+  url: 'auth/r/orders/tBTCUSD/hist',
+  params: {
     limit: 2,
     end: null
   }
-)
+})
 
 // hist all
-lib.post(
-  'v2/auth/r/orders/hist',
-  {},
-  {
+lib.post({
+  url: 'auth/r/orders/hist',
+  params: {
     limit: 2,
     end: null
   }
-)
+})

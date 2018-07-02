@@ -1,8 +1,5 @@
 const lib = require('../REST-v2.js')
 
-
-lib.post(
-  'v2/auth/r/wallets',
-  {},
-  {}
-)
+lib.post({
+  url: 'auth/r/wallets'
+})
