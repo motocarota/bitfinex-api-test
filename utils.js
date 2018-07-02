@@ -19,7 +19,7 @@ function getApiKeys() {
 function getRestURL (version = 2) {
   const { baseURL } = getConfig()
   
-  return `http://${baseURL}/v${version}`
+  return `https://${baseURL}/v${version}`
 }
 
 function getWssURL (version = 2) {
