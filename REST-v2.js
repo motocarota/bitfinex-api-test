@@ -50,6 +50,7 @@ function authMessage (args = {}) {
   const completeURL = `${baseUrl}/${url}/${queryString}`
 
   // DEBUG
+  console.log('completeURL:',completeURL)
   console.log('signature url:', signatureUrl) // completeURL
   console.log('body:', JSON.stringify(body, 0, 2))
   console.log('nonce:', nonce)

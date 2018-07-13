@@ -31,11 +31,11 @@ function publicMessage (args = {}) {
 function authMessage ({ url, body = {}, params = {} }) {
   const { apiKey = '', apiSecret = '' } = getApiKeys()
   const nonce = '' + (Date.now() * 1000)
-  const completeURL = `${getRestURL()}/${url}`
+  const completeURL = `${getRestURL({"version":1})}/${url}`
   const data = Object.assign(
     {},
     {
-      request: `/${url}`,
+      request: `/v1/${url}`,
       nonce
     },
     body

@@ -1,5 +1,5 @@
 const lib = require('../REST-v1.js')
 
 lib.post({
-  url: 'v1/history/movements'
+  url: 'history/movements'
 })

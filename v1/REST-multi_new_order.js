@@ -1,7 +1,7 @@
 const lib = require('../REST-v1.js')
 
 lib.post({
-  url: 'v1/order/new/multi', 
+  url: 'order/new/multi', 
   params: {
     orders: [
       {
