@@ -40,7 +40,7 @@ function authMessage ({ url, body = {}, params = {} }) {
     },
     body
   )
-  const payload = new Buffer(JSON.stringify(data)).toString('base64')
+  const payload = Buffer.from(JSON.stringify(data)).toString('base64')
   const queryString = toQueryString(params)
   const signature = crypto
     .createHmac('sha384', apiSecret)
