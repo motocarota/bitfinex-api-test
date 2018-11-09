@@ -66,7 +66,10 @@ nc -l 1234 &
 // setup the base Url ENV variable
 export BFX_API_URL='localhost:1234'
 ```
-now once you use and endpoint, netcat will show you the exact payload sent, complete with headers. (this trick helped me a lot to grok a lot of very tricky concepts)
+now once you use and endpoint, netcat will show you the exact payload sent, complete with headers. (this trick helped me a lot to grok a lot of very tricky concepts).
+
+### NOTE
+You will not receive any response to your requests, this is useful only to inspect the received message in a more detailed way than console logging it through node.js.
 
 ## Contibution
 
