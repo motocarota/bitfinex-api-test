@@ -4,7 +4,7 @@ function getConfig () {
   return {
     apiKey: process.env[ 'BFX_API_KEY' ] || '-',
     apiSecret: process.env[ 'BFX_API_SECRET' ] || '-',
-    baseURL: process.env[ 'BFX_API_BASE_URL' ] || 'api.bitfinex.com'
+    baseURL: process.env[ 'BFX_API_URL' ] || 'api.bitfinex.com'
   }
 }
 

@@ -63,8 +63,8 @@ In case you want to inspect what are you exactly sending to the Bitfinex API, yo
 ```
 // run a local netcat server on port 1234
 nc -l 1234 &
-// setup the BFX-API-BASE-URL ENV variable
-export BFX-API-URL='localhost:1234'
+// setup the base Url ENV variable
+export BFX_API_URL='localhost:1234'
 ```
 now once you use and endpoint, netcat will show you the exact payload sent, complete with headers. (this trick helped me a lot to grok a lot of very tricky concepts)
 
