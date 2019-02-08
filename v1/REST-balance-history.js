@@ -2,10 +2,10 @@ const lib = require('../REST-v1.js')
 
 lib.post({
   url: 'history',
-  params: {
-    currency: "BTCUSD",
-    since: 1537426800,
-    until: 1539586800,
+  body: {
+    currency: "USD",
+    since: 1541778600,
+    until: 1541778699,
     limit: 100,
     wallet: 'deposit', // 'trading', 'exchange'
   },
